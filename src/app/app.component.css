@@ -1,3 +1,13 @@
 p {
   font-family: Lato;
 }
+
+.heading,
+.btnAddUser {
+  margin-bottom: 20px;
+}
+.btn-primary,
+.btn-secondary {
+  margin-top: 15px;
+  margin-right: 15px;
+}

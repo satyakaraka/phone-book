@@ -1,4 +1,4 @@
-<div class="customer-resgistration-wrapper">
+<div class="customer-resgistration-wrapper container">
   <hello name="{{ name }}"></hello>
   <div class="col-sm-8">
     <div class="heading">User Registration form</div>
@@ -88,8 +88,8 @@
             password is required.
           </div>
         </div>
-        <button type="submit" (click)="submitForm()" [disabled]="registerForm.pristine || registerForm.invalid" class="btn btn-success">Save</button>
-        <button class="btn btn-primary" (click)="cancelForm()">Cancel</button>
+        <button type="submit" (click)="submitForm()" [disabled]="registerForm.pristine || registerForm.invalid" class="btn btn-primary">Save</button>
+        <button class="btn btn-secondary" (click)="cancelForm()">Cancel</button>
       </form>
     </div>
   </div>
