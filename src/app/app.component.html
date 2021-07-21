@@ -1,126 +1,138 @@
-<div class="customer-resgistration-wrapper container">
-  <hello name="{{ name }}"></hello>
-  <div class="col-sm-8">
-    <div class="heading">User Registration form</div>
-    <button class="btnAddUser btn btn-primary" (click)="addUser()">Add User</button>
-    <div *ngIf="addUserForm || editingUser">
-      <form [formGroup]="registerForm" novalidate>
-        <div class="form-group">
-          <label>First Name:</label>
-          <input class="form-control" formControlName="firstName" type="text">
-        </div>
-        <div
-          *ngIf="registerForm.controls['firstName'].invalid && (registerForm.controls['firstName'].dirty || registerForm.controls['firstName'].touched)"
-          class="alert alert-danger">
-          <div *ngIf="registerForm.controls['firstName'].errors.required">
-            First Name is required.
+<header class="header">
+  <span>{{ name }}</span>
+</header>
+<div class="user-resgistration-wrapper container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="heading row">
+        <span class="col-sm-8">Registration form</span>
+        <span class="col-sm-4"><button class="btnAddUser right btn btn-primary" (click)="addUser()">Add User</button></span>
+      </div>
+      <div *ngIf="addUserForm || editingUser">
+        <form [formGroup]="registerForm" novalidate>
+          <div class="form-group">
+            <label>First Name:</label>
+            <input class="form-control" formControlName="firstName" type="text">
           </div>
-        </div>
+          <div
+            *ngIf="registerForm.controls['firstName'].invalid && (registerForm.controls['firstName'].dirty || registerForm.controls['firstName'].touched)"
+            class="alert alert-danger">
+            <div *ngIf="registerForm.controls['firstName'].errors.required">
+              First Name is required.
+            </div>
+          </div>
 
-        <div class="form-group">
-          <label>Last Name:</label>
-          <input class="form-control" formControlName="lastName" type="text">
-        </div>
-        <div
-          *ngIf="registerForm.controls['lastName'].invalid && (registerForm.controls['lastName'].dirty || registerForm.controls['lastName'].touched)"
-          class="alert alert-danger">
-          <div *ngIf="registerForm.controls['lastName'].errors.required">
-            Last Name is required.
+          <div class="form-group">
+            <label>Last Name:</label>
+            <input class="form-control" formControlName="lastName" type="text">
           </div>
-        </div>
+          <div
+            *ngIf="registerForm.controls['lastName'].invalid && (registerForm.controls['lastName'].dirty || registerForm.controls['lastName'].touched)"
+            class="alert alert-danger">
+            <div *ngIf="registerForm.controls['lastName'].errors.required">
+              Last Name is required.
+            </div>
+          </div>
 
-        <div class="form-group">
-          <label>Email:</label>
-          <input class="form-control" formControlName="email" type="email">
-        </div>
-        <div
-          *ngIf="registerForm.controls['email'].invalid && (registerForm.controls['email'].dirty || registerForm.controls['email'].touched)"
-          class="alert alert-danger">
-          <div *ngIf="registerForm.controls['email'].errors.required">
-            Email is required.
+          <div class="form-group">
+            <label>Email:</label>
+            <input class="form-control" formControlName="email" type="email">
           </div>
-        </div>
+          <div
+            *ngIf="registerForm.controls['email'].invalid && (registerForm.controls['email'].dirty || registerForm.controls['email'].touched)"
+            class="alert alert-danger">
+            <div *ngIf="registerForm.controls['email'].errors.required">
+              Email is required.
+            </div>
+          </div>
 
-        <div class="form-group">
-          <label>Phone:</label>
-          <input class="form-control" formControlName="phone" type="phone">
-        </div>
-        <div
-          *ngIf="registerForm.controls['phone'].invalid && (registerForm.controls['phone'].dirty || registerForm.controls['phone'].touched)"
-          class="alert alert-danger">
-          <div *ngIf="registerForm.controls['phone'].errors.required">
-            Phone is required.
+          <div class="form-group">
+            <label>Phone:</label>
+            <input class="form-control" formControlName="phone" type="phone">
           </div>
-        </div>
+          <div
+            *ngIf="registerForm.controls['phone'].invalid && (registerForm.controls['phone'].dirty || registerForm.controls['phone'].touched)"
+            class="alert alert-danger">
+            <div *ngIf="registerForm.controls['phone'].errors.required">
+              Phone is required.
+            </div>
+          </div>
 
-        <div class="form-group">
-          <label>Company:</label>
-          <input class="form-control" formControlName="company" type="text">
-        </div>
-        <div
-          *ngIf="registerForm.controls['company'].invalid && (registerForm.controls['company'].dirty || registerForm.controls['company'].touched)"
-          class="alert alert-danger">
-          <div *ngIf="registerForm.controls['company'].errors.required">
-            Company is required.
+          <div class="form-group">
+            <label>Company:</label>
+            <input class="form-control" formControlName="company" type="text">
           </div>
-        </div>
+          <div
+            *ngIf="registerForm.controls['company'].invalid && (registerForm.controls['company'].dirty || registerForm.controls['company'].touched)"
+            class="alert alert-danger">
+            <div *ngIf="registerForm.controls['company'].errors.required">
+              Company is required.
+            </div>
+          </div>
 
-        <div class="form-group">
-          <label>Password:</label>
-          <input class="form-control" formControlName="password" type="password">
-        </div>
-        <div
-          *ngIf="registerForm.controls['password'].invalid && (registerForm.controls['password'].dirty || registerForm.controls['password'].touched)"
-          class="alert alert-danger">
-          <div *ngIf="registerForm.controls['password'].errors.required">
-            password is required.
+          <div class="form-group">
+            <label>Password:</label>
+            <input class="form-control" formControlName="password" type="password">
           </div>
-        </div>
+          <div
+            *ngIf="registerForm.controls['password'].invalid && (registerForm.controls['password'].dirty || registerForm.controls['password'].touched)"
+            class="alert alert-danger">
+            <div *ngIf="registerForm.controls['password'].errors.required">
+              password is required.
+            </div>
+          </div>
 
-        <div class="form-group">
-          <label>Confirm Password:</label>
-          <input class="form-control" formControlName="confirmPassword" type="password">
-        </div>
-        <div
-          *ngIf="registerForm.controls['confirmPassword'].invalid && (registerForm.controls['confirmPassword'].dirty || registerForm.controls['confirmPassword'].touched)"
-          class="alert alert-danger">
-          <div *ngIf="registerForm.controls['confirmPassword'].errors.required">
-            password is required.
+          <div class="form-group">
+            <label>Confirm Password:</label>
+            <input class="form-control" formControlName="confirmPassword" type="password">
           </div>
-        </div>
-        <button type="submit" (click)="submitForm()" [disabled]="registerForm.pristine || registerForm.invalid" class="btn btn-primary">Save</button>
-        <button class="btn btn-secondary" (click)="cancelForm()">Cancel</button>
-      </form>
+          <div
+            *ngIf="registerForm.controls['confirmPassword'].invalid && (registerForm.controls['confirmPassword'].dirty || registerForm.controls['confirmPassword'].touched)"
+            class="alert alert-danger">
+            <div *ngIf="registerForm.controls['confirmPassword'].errors.required">
+              password is required.
+            </div>
+          </div>
+          <button type="submit" (click)="submitForm()" [disabled]="registerForm.pristine || registerForm.invalid" class="btn btn-primary">Save</button>
+          <button class="btn btn-secondary" (click)="cancelForm()">Cancel</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="registered-users col-sm-12">
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First Name</th>
+              <th scope="col">last Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Comapny</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of registeredUsers;">
+              <th scope="row">{{ user.id }}</th>
+              <td>{{ user.firstName }}</td>
+              <td>{{ user.lastName }}</td>
+              <td>{{ user.email }}</td>
+              <td>{{ user.phone }}</td>
+              <td>{{ user.company }}</td>
+              <td>
+                <button (click)="editUser(user)" class="btn btn-info">Edit</button>
+                <button (click)="deleteUser(user)" class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
-
-  <div class="registered-users">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">First Name</th>
-          <th scope="col">last Name</th>
-          <th scope="col">Email</th>
-          <th scope="col">Phone</th>
-          <th scope="col">Comapny</th>
-          <th scope="col">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let user of registeredUsers;">
-          <th scope="row">{{ user.id }}</th>
-          <td>{{ user.firstName }}</td>
-          <td>{{ user.lastName }}</td>
-          <td>{{ user.email }}</td>
-          <td>{{ user.phone }}</td>
-          <td>{{ user.company }}</td>
-          <td>
-            <button (click)="editUser(user)" class="btn btn-info">Edit</button>
-            <button (click)="deleteUser(user)" class="btn btn-danger">Delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
 </div>
+
+<footer class="footer">
+  <span>&copy; 2021, kss.vasu86@gmail.com</span>
+</footer>

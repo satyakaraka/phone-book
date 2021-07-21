@@ -7,7 +7,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  name = 'Satya Phone Book App';
+  name = 'Phone Book App';
   registerForm: FormGroup;
   registeredUsers: Array<any> = [];
   submitted: boolean = false;
