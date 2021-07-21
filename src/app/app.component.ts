@@ -4,10 +4,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  name = 'Satya Buzz Board Test';
+  name = 'Satya Phone Book App';
   registerForm: FormGroup;
   registeredUsers: Array<any> = [];
   submitted: boolean = false;
@@ -22,8 +22,8 @@ export class AppComponent {
         id: '380696',
         firstName: 'Satya',
         lastName: 'Karaka',
-        email: 'kss.vasu65@gmail.com',
-        phone: '974201365',
+        email: 'tester@gmail.com',
+        phone: '9874563210',
         company: 'Charter Global Technologies',
         password: 'test',
         confirmPassword: 'test'
@@ -44,7 +44,7 @@ export class AppComponent {
         lastName: 'Karaka',
         email: 'rupa@gmail.com',
         phone: '9874563210',
-        company: 'Test',
+        company: 'TCS',
         password: 'test',
         confirmPassword: 'test'
       }
